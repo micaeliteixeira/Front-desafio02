@@ -1,22 +1,28 @@
-import './App.css'
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import Login from './Page/Login'
-import Profile from './Page/Profile'
-import Search from './Page/Search'
-import Upload from './Page/Upload'
+import GlobalStyle from './theme/GlobalStyle.ts'
+import Home from './page/Home/index.tsx'
+import Login from './page/Login'
+import Orders from './page/Orders/index.tsx'
+import Profile from './page/Profile'
+import { ThemeProvider } from 'styled-components'
+import Upload from './page/Upload/index.tsx'
+import theme from './theme/theme.ts'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Upload />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/search" element={<Search />} />
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/upload" element={<Upload />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 
