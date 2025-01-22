@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${(props) => props.theme.font};
     background-color: ${(props) => props.theme.primaryColor};
     color: white;
+    font-size: 15px
   }
 `
 
