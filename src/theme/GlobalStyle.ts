@@ -13,6 +13,14 @@ const GlobalStyle = createGlobalStyle`
     color: white;
     font-size: 15px
   }
+
+  .container-main {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  flex-direction: column;
+  }
 `
 
 export default GlobalStyle

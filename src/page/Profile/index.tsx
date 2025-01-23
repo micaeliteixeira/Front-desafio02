@@ -1,19 +1,22 @@
 import * as S from './styled'
 
+import { AuthContext } from '../../contexts/AuthContext'
 import { Avatar } from '@mui/material'
-import Head from '../../component/Head'
+import Breadcrumb from '../../component/Breadcrumb'
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
+import { useContext } from 'react'
 
 const Login = () => {
+  const { user } = useContext(AuthContext)
   const information = [
-    { label: 'Nome:', value: 'Teste' },
-    { label: 'E-mail:', value: 'teste@g.com' },
-    { label: 'Ultimo login:', value: '16/01/2025 às 15:00' }
+    { label: 'Nome:', value: user?.name },
+    { label: 'E-mail:', value: user?.email }
   ]
 
   return (
-    <div>
-      <Head />
+    <>
+      <Breadcrumb page="PERFIL" url="/profile" />
+
       <S.ContainerText>
         <Avatar sx={{ background: '#15202E', width: '100px', height: '100px' }}>
           <PersonOutlineIcon sx={{ fontSize: '60px' }} />
@@ -26,7 +29,7 @@ const Login = () => {
           </S.InformationDiv>
         ))}
       </S.ContainerText>
-    </div>
+    </>
   )
 }
 

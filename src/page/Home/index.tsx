@@ -1,13 +1,16 @@
 import * as S from './styled'
 
-import Head from '../../component/Head'
+import { AuthContext } from '../../contexts/AuthContext'
+import Breadcrumb from '../../component/Breadcrumb'
+import { useContext } from 'react'
 
 const Home = () => {
+  const { user } = useContext(AuthContext)
   return (
-    <div>
-      <Head />
-      <S.ContainerText>Seja bem-vindo!</S.ContainerText>
-    </div>
+    <>
+      <Breadcrumb />
+      <S.ContainerText>Seja bem-vindo {user?.name}!</S.ContainerText>
+    </>
   )
 }
 

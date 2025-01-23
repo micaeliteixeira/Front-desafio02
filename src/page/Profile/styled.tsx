@@ -23,3 +23,10 @@ export const label = styled.div`
   color: ${({ theme }) => theme.secondaryColor};
   font-weight: 600;
 `
+
+export const Container = styled.div`
+  width: 80%;
+  display: flex;
+  margin: 20px auto;
+  flex-direction: column;
+`
