@@ -6,6 +6,7 @@ Criar um site conectado ao back
 
 - [Sobre](#sobre)
 - [Instalação](#instalação)
+- [Tecnologias](#tecnologias)
 - [Uso](#uso)
 
 ## Sobre
@@ -52,5 +53,13 @@ http://127.0.0.1:5173//
 
 # Para rodar o back funcionar é preciso o desafio do back está rodando na máquina
 npm run test
+
+#Para upload o arquivo de exemplo está no root na pasta arquivo
+cd arquivos
+
+
+#Para o login o email e senha são:
+email: primeiro@teste.com
+senha: 123@456
 
 ```
