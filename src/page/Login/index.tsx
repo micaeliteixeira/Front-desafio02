@@ -12,6 +12,7 @@ import {
 } from '@mui/material'
 import { ReportGmailerrorred, Visibility, VisibilityOff } from '@mui/icons-material'
 import { useContext, useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 import Alert from '../../component/Alert'
 import { AuthContext } from '../../contexts/AuthContext'
@@ -20,10 +21,10 @@ import { useTheme } from 'styled-components'
 
 const Login = () => {
   const theme = useTheme()
-
-  const { signIn, errorService, setErrorService } = useContext(AuthContext)
+  const location = useLocation()
+  const navigate = useNavigate()
+  const { signIn, errorService, setErrorService, user } = useContext(AuthContext)
   const [showPassword, setShowPassword] = useState(false)
-
   const [auth, setAuth] = useState(true)
   const [error, setError] = useState(false)
   const [helperText, setHelperText] = useState('')
@@ -31,6 +32,10 @@ const Login = () => {
     password: '',
     email: ''
   })
+  const isLoginPage = location?.pathname === '/'
+  if (user && isLoginPage) {
+    return navigate('/home')
+  }
 
   const handleButtonEntrar = async () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/

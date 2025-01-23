@@ -1,57 +1,64 @@
-import { Switch } from '@mui/material'
 import styled from 'styled-components'
-import theme from '../../theme/theme'
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
   height: 80px;
-`
-
-export const ContainerLogin = styled.div`
-  width: 300px;
-  display: flex;
-  flex-direction: column;
+  background-color: ${({ theme }) => theme.blueDark};
   align-items: center;
-  gap: 12px;
+  padding: 0 30px;
 `
 
-export const Logo = styled.h1`
-  font-size: 30px;
+export const Logo = styled.div`
+  font-size: 25px;
   line-height: 36.31px;
   font-weight: 400;
+  cursor: pointer;
+  margin-left: 20px;
 `
 
-export const ContainerInputsButton = styled.div`
-  width: 278px;
+export const ContainerDrawer = styled.div`
   display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 30px 16px;
   flex-direction: column;
-  gap: 12px;
+  height: 100vh;
 `
-export const CustomSwitch = styled(Switch)(() => ({
-  '& .MuiSwitch-thumb': {
-    backgroundColor: theme.blueGray
-  },
 
-  '& .MuiSwitch-track': {
-    backgroundColor: theme.blueDark
-  },
+export const ContainerDrawerHead = styled.div`
+  display: flex;
+  border-bottom: 1px solid #e5e5e5;
+  justify-content: flex-end;
+  padding-bottom: 16px;
+`
 
-  '& .MuiSwitch-switchBase.Mui-checked': {
-    transform: 'translateX(20px)',
-    '& .MuiSwitch-thumb': {
-      backgroundColor: theme.secondaryColor
-    },
-    '& + .MuiSwitch-track': {
-      backgroundColor: theme.blueDark
-    }
+export const Input = styled.input`
+  background-color: #f4f4f4;
+  border: none;
+  padding: 8px 12px;
+  height: 50px;
+
+  &:-ms-input-placeholder {
+    font-size: 16px;
+    color: #ccc !important;
   }
-}))
+`
+export const Menu = styled.div`
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 8px 12px;
+  justify-content: space-between;
+  cursor: pointer;
 
-export const CadastroSpan = styled.span`
-  margin-left: auto;
-  color: ${({ theme }) => theme.secondaryColor};
-  font-size: 15px;
-  line-height: 18.15px;
-  cursor: not-allowed;
+  &:hover {
+    color: ${({ theme }) => theme.secondaryColor};
+  }
+`
+
+export const ContainerDrawerValue = styled.div`
+  display: flex;
+  gap: 10px;
+  align-items: center;
 `
