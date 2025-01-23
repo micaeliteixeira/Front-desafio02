@@ -21,6 +21,24 @@ const GlobalStyle = createGlobalStyle`
   margin: 20px auto;
   flex-direction: column;
   }
+
+  .react-datepicker__input-container >input {
+  background-color: #1d2938 !important;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 226px;
+  height: 37px;
+  
+  }
+  .react-datepicker__input-container input:focus {
+    box-shadow:0 0 0 1px ${(props) => props.theme.secondaryColor} !important;
+    transform: none;
+    border-color:${(props) => props.theme.secondaryColor} !important;
+    outline: none
+  }
+ 
 `
 
 export default GlobalStyle
